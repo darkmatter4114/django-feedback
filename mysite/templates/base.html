@@ -2,19 +2,159 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"
+            type="text/javascript"></script>
+
     <title>{%block title%}{% endblock %}</title>
 </head>
 <body>
-<!--{% block nav %}-->
-<!--        <ul id="nav">-->
-<!--            <li>{% block nav-admin %}<a href="/admin">Admin</a>{% endblock %}</li>-->
-<!--            <li>{% block nav-send %}<a href="/">Send mes</a>{% endblock %}</li>-->
-<!--            <li>{% block nav-contact %}<a href="/index">Contact</a>{% endblock %}</li>-->
-<!--        </ul>-->
-<!--{% endblock %}-->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="
+    display: none;">
+        <span class="navbar-toggler-icon">       </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'main' %}">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'create' %}">NEW POST</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">LOG OUT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin">ADMIN</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
 {% block content %}
+
 {% endblock content %}
+{% block footer%}
+<footer>
+		<div class="container">
+			<div class="row" style="display: flex;">
+				<div class="col-md-12 wrap">
+					<span class="copy">&copy; Copyright &nbsp </span>
+					<span class="name">Dark Matter &nbsp </span>
+					<span class="date">2021</span>
+				</div>
+			</div>
+		</div>
+	</footer>
+{% endblock footer %}
+<style>
+.navbar{
+    border: none;
+    margin-bottom: 60px !important;
+    padding: 0;
+    margin: auto;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%,rgba(0,212,255,1) 0%,rgba(64,19,108,0.7458333675266982) 100%);
+    animation: move_eye 1s ease infinite alternate;
+}
+@keyframes move_eye {
+    0% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(64,19,108,0.7458333675266982) 100%); }
+    10% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 10%, rgba(64,19,108,0.7458333675266982) 100%); }
+    20% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 20%, rgba(64,19,108,0.7458333675266982) 100%); }
+    30% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 30%, rgba(64,19,108,0.7458333675266982) 100%); }
+    40% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 40%, rgba(64,19,108,0.7458333675266982) 100%); }
+    50% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 50%, rgba(64,19,108,0.7458333675266982) 100%); }
+    60% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 60%, rgba(64,19,108,0.7458333675266982) 100%); }
+    70% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 70%, rgba(64,19,108,0.7458333675266982) 100%); }
+    80% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 80%, rgba(64,19,108,0.7458333675266982) 100%); }
+    90% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 90%, rgba(64,19,108,0.7458333675266982) 100%); }
+    100% { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%, rgba(64,19,108,0.7458333675266982) 100%); }
+    }
+.navbar ul>li.nav-item{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 115px;
+    height: 100px;
+}
+.navbar ul>li.nav-item a{
+	font-family: Open Sans;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 18px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #FFFFFF;
+}
+.navbar ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+    float: none;
+    width: 64%;
+	height: 100px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+}
+
+.navbar ul>li.brand{
+	width: 150px;
+    height: 150px;
+    margin: 25px 35px 0 35px;
+}
+.navbar ul>li.nav-item a.navbar-brand{
+	margin-right: 0px;
+}
+.navbar ul>li.nav-item a.navbar-brand img{
+}
+.collapse.navbar-collapse{
+	justify-content: center;
+}
+
+
+footer {
+	height: 40px;
+    background: black;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+footer .container, .row{
+    height: inherit;
+}
+footer .wrap{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+
+}
+
+
+</style>
 </body>
 </html>
